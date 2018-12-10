@@ -8,7 +8,7 @@
 
 scheme("FastLaneTest")
 
-open_report(true)
+#open_report(true)
 
 clean(true)
 
