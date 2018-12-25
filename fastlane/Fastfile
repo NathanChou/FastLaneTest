@@ -22,13 +22,31 @@ platform :ios do
     upload_to_app_store
   end
 
-desc "build your iOS app"
+
+  desc "send message from slack"
+  lane :slack_message do
+    slack(
+       message: "App successfully test.",
+       success: true,
+       slack_url: "https://hooks.slack.com/services/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"
+       )
+   end
+
+
+  desc "build your iOS app"
   lane :beta do
     match(type: "appstore")
     increment_build_number
     gym(scheme: "FastLaneTest")
 
-  # upload to Testflight
-  pilot
-end
+    # upload to Testflight
+    pilot
+
+    # 都結束以後
+    after_all do |lane|
+      slack_message
+    end
+  end
+
+
 end

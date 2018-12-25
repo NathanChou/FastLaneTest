@@ -26,6 +26,11 @@ Push a new release build to the App Store
 fastlane ios beta
 ```
 build your iOS app
+### ios slack_message
+```
+fastlane ios slack_message
+```
+send message from slack
 
 ----
 
