@@ -37,7 +37,7 @@ platform :ios do
   lane :beta do
     
     before_all do |lane|
-      ENV["MATCH_PASSWORD"] = "4940"
+      
     end
 
     match(type: "appstore")
