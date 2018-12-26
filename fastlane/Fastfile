@@ -35,7 +35,12 @@ platform :ios do
 
   desc "build your iOS app"
   lane :beta do
-    match(type: "appstore", workspace: ENV["MATCH_PASSWORD"])
+    
+    before_all do |lane|
+      ENV["MATCH_PASSWORD"] = "4940"
+    end
+
+    match(type: "appstore")
     increment_build_number
     gym(scheme: "FastLaneTest")
 
