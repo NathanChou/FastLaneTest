@@ -10,6 +10,7 @@ scheme("FastLaneTest")
 clean(true)
 
 device "iPhone X (12.1)"
+#devices(["iPhone X (12.1)", "iPhone 6s (12.1)"])
 
 # Enable skip_build to skip debug builds for faster test performance
 skip_build(true)
