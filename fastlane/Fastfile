@@ -41,7 +41,10 @@ platform :ios do
     end
 
     match(type: "appstore")
+    
+    get_build_number
     increment_build_number
+    
     gym(scheme: "FastLaneTest")
 
     # upload to Testflight
